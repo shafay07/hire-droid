@@ -5,7 +5,6 @@ import pandas as pd
 import os
 import glob
 from tqdm import tqdm
-from xlsxwriter.exceptions import FileCreateError
 
 # Defining the path & selecting files
 cvs = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'CVs')
@@ -86,7 +85,7 @@ summary.set_index('Name', inplace=True)
 # Export summary table
 # summary.to_csv('screening results.csv')
 try:
-    summary.to_excel('screening results.xlsx')
+    summary.to_csv('results.csv')
 except(FileCreateError):
     print('de')
 
