@@ -153,8 +153,8 @@ def main(arg1, arg2, arg3, arg4):
                 os.unlink(sourcePDFFile)
 
 
-mypath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Bundled CVs')
-destination = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'CVs')
+mypath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'batch_cvs')
+destination = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'extracted_cvs')
 
 
 onlyfiles = [os.path.join(mypath, f) for f in os.listdir(

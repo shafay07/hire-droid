@@ -129,7 +129,10 @@ dmypy.json
 .pyre/
 
 # project specific
-/Bundled CVs
-/CVs
+/batch_cvs
+/extracted_cvs
 Details.xlsx
 results.csv
+.vscode
+clean_extracted.txt
+extracted.txt
