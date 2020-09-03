@@ -1,4 +1,5 @@
 {
+
     "Roche Experience": [
         "roche",
         "cobas"
@@ -7,13 +8,32 @@
         "ivd",
         "in vitro",
         "dia",
-        "diagnostics"
+        "diagnostics",
+        "manager",
+        "account",
+        "sales",
+        "assistan",
+        "professor",
+        "office",
+        "biomedical"
     ],
     "Education": [
         "biology",
         "chemistry",
         "english",
-        "arabic"
+        "arabic",
+        "master",
+        "bsc",
+        "bachelor",
+        "engineer",
+        "medicine",
+        "pharmacy",
+        "engineering",
+        "medicine",
+        "radiology",
+        "laboratory",
+        "lab",
+        "research"
     ],
     "Location": [
         "abha",
@@ -32,7 +52,11 @@
         "bisha",
         "tathleeth",
         "al qundudhah",
-        "al bahah"
+        "al bahah",
+        "dammam",
+        "dubai",
+        "pakistan",
+        "egypt"
     ],
     "Cometitors": [
         "mediserv",
@@ -79,6 +103,14 @@
         "arabian health care supply company, olayan group",
         "abbott laboratories",
         " bd "
+    ],
+    "Speciality": [
+        "expert",
+        "experienced",
+        "associate",
+        "business development",
+        "channel management",
+        "consultative selling"
     ],
     "Irrelevant Candidates": [
         "pharmaceutical",
