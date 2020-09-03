@@ -47,7 +47,6 @@ def getEachResumeText(current_batch, pdf_reader, bookmarks, start_bookmark=0):
     end_bookmark = start_bookmark+1
     end_page = pdf_reader.getDestinationPageNumber(
         bookmarks[end_bookmark])
-    print("startPage {}, endPage {}".format(start_page, end_page))
 
     # itterate over a complete resume to extract text
     for page in range(start_page, end_page):
@@ -58,15 +57,9 @@ def getEachResumeText(current_batch, pdf_reader, bookmarks, start_bookmark=0):
             cleaned = clean(extracted, lower=True, no_line_breaks=True, no_phone_numbers=True,
                             no_emails=True, no_urls=True, no_numbers=True, no_digits=True)
             clean_extracted += cleaned
-        # Debug code to see whats extracted by pdfplumber
-        '''
-        file1 = open("clean_extracted.txt", "a",
-                     encoding='utf-8')  # append mode
-        file1.write(clean_extracted)
-        file1.write("\n")
-        file1.write("***NEXT RESUME***")
-        file1.close()
-        '''
+    # helper function to save whats extracted by pdfplumber in a text file
+    saveCleanText(clean_extracted)
+
     return clean_extracted
     #     while count < num_pages:
     #         pageObj = pdfReader.getPage(count)
@@ -102,20 +95,38 @@ def getEachResumeText(current_batch, pdf_reader, bookmarks, start_bookmark=0):
     # summary.set_index('Name', inplace=True)
     # # Export summary table
     # summary.to_csv('results.csv')
-    print('Done...')
-    print('Please find results.csv file, thank you for using Hire-Droid.')
+
+
+# Itterate over each resume for each batch to search the matching keywords
+def searchEachResume(batch_pdf, keywords):
+    for current_batch in batch_pdf:
+        pdfReader, bookmarks = getPdfBookmarks(current_batch)
+        for resume_index, resume in enumerate(tqdm(bookmarks, bar_format='{l_bar}{bar:50}{r_bar}{bar:-10b}')):
+            clean_extracted = getEachResumeText(
+                current_batch, pdfReader, bookmarks, resume_index)
+            if resume_index == 5:
+                exit()
+
+
+# Helper function to write a text file to analyze what is extracted
+def saveCleanText(to_write):
+    file1 = open("clean_extracted.txt", "a",
+                 encoding='utf-8')  # append mode
+    file1.write("\n"+to_write+"\n")
+
+    file1.write("***NEXT RESUME***")
+    file1.close()
+
+
+# Save final results of keywords matched in a csv
+def saveCsvResults():
+    pass
 
 
 if __name__ == "__main__":
     banner = pyfiglet.figlet_format("Hire - Droid", font="standard")
     print(banner)
     batchPdf, keywords = loadFiles()
-    for batch_index, current_batch in enumerate(batchPdf):
-        pdfReader, bookmarks = getPdfBookmarks(current_batch)
-        for resume_index, resume in enumerate(tqdm(bookmarks, bar_format='{l_bar}{bar:50}{r_bar}{bar:-10b}')):
-            if resume_index == 20:
-                exit()
-            print("\nProcessing batch: {}, Resume: {}".format(
-                batch_index+1, resume_index+1))
-            clean_extracted = getEachResumeText(
-                current_batch, pdfReader, bookmarks, resume_index)
+    searchEachResume(batchPdf, keywords)
+    print('Done...')
+    print('Please find results.csv file, thank you for using Hire-Droid.')
