@@ -56,7 +56,10 @@
         "dammam",
         "dubai",
         "pakistan",
-        "egypt"
+        "egypt",
+        "saudi arabia",
+        "dammam",
+        "india"
     ],
     "Cometitors": [
         "mediserv",
@@ -88,7 +91,7 @@
         "nova",
         "mitsubishi",
         "77 electronika",
-        " j&j ",
+        "j&j",
         "olympus",
         "al faisaliah medical systems",
         "amico",
@@ -102,10 +105,11 @@
         "samir photographic supplies ltd.",
         "arabian health care supply company, olayan group",
         "abbott laboratories",
-        " bd "
+        "bd"
     ],
     "Speciality": [
         "expert",
+        "management",
         "experienced",
         "associate",
         "business development",
@@ -118,5 +122,14 @@
         "transferable",
         "visa",
         "iqama"
+    ],
+    "To look for": [
+        "married",
+        "uk",
+        "usa",
+        "us",
+        "america",
+        "certified",
+        "phd"
     ]
 }

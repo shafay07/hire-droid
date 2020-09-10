@@ -84,11 +84,12 @@ def searchEachResume(batch_pdf, keywords):
             # create a hit list
             hits = {}
             for key, value in keywords.items():
+                count = 0
                 for val in value:
-                    count = clean_extracted.count(val)
-                    hits["Applicant id"] = '=HYPERLINK("{}#page={}","{}")'.format(
-                        current_batch, start_page+1, resume_index+1)
-                    hits[key] = count
+                    count += clean_extracted.count(val)
+                hits["Applicant id"] = '=HYPERLINK("{}#page={}","{}")'.format(
+                    current_batch, start_page+1, resume_index+1)
+                hits[key] = count
             saveCsvResults(hits)
 
 
