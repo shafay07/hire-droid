@@ -25,7 +25,7 @@ def loadFiles():
 
     # Loading keywords.json
     print('***Loading keywords***')
-    with open('keywords.json') as json_file:
+    with open(os.path.join(os.pardir, "keywords.json")) as json_file:
         keywords = json.load(json_file)
     print('Done...\n')
 
@@ -103,12 +103,12 @@ def setCsvHeader(header):
     list_header = list(header)
     list_header.insert(0, 'Applicant ID')
     df = pd.DataFrame(columns=list_header)
-    df.to_csv('results.csv', index=False)
+    df.to_csv('batch_results.csv', index=False)
 
 
 # Helper function to write a text file to analyze what is extracted
 def saveCleanText(to_write):
-    file1 = open("clean_extracted.txt", "a",
+    file1 = open("batch_clean_extracted.txt", "a",
                  encoding='utf-8')  # append mode
     file1.write("\n"+to_write+"\n")
     file1.write("***NEXT RESUME***")
@@ -118,7 +118,7 @@ def saveCleanText(to_write):
 # Save final results of keywords matched in a csv
 def saveCsvResults(to_append):
     df = pd.DataFrame(to_append, index=[0])
-    df.to_csv('results.csv', mode='a', header=False, index=False)
+    df.to_csv('batch_results.csv', mode='a', header=False, index=False)
 
 
 if __name__ == "__main__":
@@ -127,4 +127,4 @@ if __name__ == "__main__":
     batchPdf, keywords = loadFiles()
     searchEachResume(batchPdf, keywords)
     print('Done...')
-    print('\nPlease find results.csv file, thank you for using Hire-Droid.')
+    print('\nPlease find batch_results.csv file, thank you for using Hire-Droid.')

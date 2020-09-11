@@ -1,20 +1,16 @@
 {
 
-    "Roche Experience": [
-        "roche",
-        "cobas"
-    ],
     "Technical Experience": [
         "ivd",
         "in vitro",
         "dia",
         "diagnostics",
-        "manager",
-        "account",
-        "sales",
-        "assistan",
-        "professor",
-        "office",
+        "lab",
+        "assistant",
+        "bio",
+        "biology",
+        "pharmacy",
+        "engineering",
         "biomedical"
     ],
     "Education": [
@@ -111,19 +107,16 @@
         "expert",
         "management",
         "experienced",
-        "associate",
-        "business development",
-        "channel management",
         "consultative selling"
     ],
     "Irrelevant Candidates": [
-        "pharmaceutical",
-        "pharmacy",
         "transferable",
         "visa",
         "iqama"
     ],
     "To look for": [
+        "pharmacy",
+        "pharmaceutical",
         "married",
         "uk",
         "usa",

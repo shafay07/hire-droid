@@ -129,10 +129,10 @@ dmypy.json
 .pyre/
 
 # project specific
-/batch_cvs
-/extracted_cvs
-Details.xlsx
-results.csv
 .vscode
-clean_extracted.txt
-extracted.txt
+batch_cvs
+each_cvs
+each_results.csv
+batch_results.csv
+batch_clean_extracted.txt
+each_clean_extracted.txt
